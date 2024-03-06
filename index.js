@@ -1,0 +1,8 @@
+const URL = "https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature"
+
+fetch(URL)
+    .then(res=>res.json())
+    .then(data=>{
+        document.body.style.backgroundImage = `url(${data.urls.full})`;
+        document.getElementById('author').textContent = `By: ${data.user.name}`;
+    })
